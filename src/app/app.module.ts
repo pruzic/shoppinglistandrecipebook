@@ -1,3 +1,4 @@
+import { DropdownDirective } from './shared/dropdown.directive';
 import { HeaderComponent } from './header/header.component';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -18,14 +19,15 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
   HttpModule
 ],
   declarations: [
-    AppComponent, 
-    ShoppingListComponent, 
-    RecipesComponent, 
-    HeaderComponent, 
-    RecipeListComponent, 
-    RecipeDetailComponent, 
-    RecipeItemComponent, 
-    ShoppingEditComponent
+    AppComponent,
+    ShoppingListComponent,
+    RecipesComponent,
+    HeaderComponent,
+    RecipeListComponent,
+    RecipeDetailComponent,
+    RecipeItemComponent,
+    ShoppingEditComponent,
+    DropdownDirective
   ],
   bootstrap: [AppComponent]
 })
