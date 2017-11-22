@@ -7,14 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  loadedFeature = "recipe";
+  loadedFeature = 'recipe';
 
   onNavigate(feature: string){
     this.loadedFeature = feature;
   }
 
   onItemDetails(item: string){
-    console.log("Item: " + item);
+    console.log('Item: ' + item);
   }
 
 }
