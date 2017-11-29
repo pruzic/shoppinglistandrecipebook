@@ -1,5 +1,5 @@
 import { Recipe } from './../recipe.model';
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '.././recipe.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
