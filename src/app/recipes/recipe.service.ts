@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
+// tslint:disable-next-line:import-blacklist
+import 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 import { Recipe } from './recipe.model';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
@@ -26,6 +29,11 @@ export class RecipeService {
 
     constructor(private shoppingList: ShoppingListService){}
 
+    setRecipes(recipes: Recipe []) {
+       this.recipes = recipes;
+       this.recipeChanged.next(this.recipes.slice());
+    }
+
     getRecipes(){
      return this.recipes.slice();
     }
@@ -38,19 +46,20 @@ export class RecipeService {
       this.shoppingList.addIngredients(ingredients);
     }
 
-    addNewRecepi(recepe: Recipe) {
+    addNewRecipe(recepe: Recipe) {
       this.recipes.push(recepe);
       this.recipeChanged.next(this.recipes.slice());
     }
 
-    updateRecepi(index: number, recepe: Recipe) {
+    updateRecipe(index: number, recepe: Recipe) {
       this.recipes[index] = recepe;
       this.recipeChanged.next(this.recipes.slice());
     }
 
-    deleteRecepe(index: number) {
+    deleteRecipe(index: number) {
       this.recipes.splice(index, 1);
       this.recipeChanged.next(this.recipes.slice());
     }
+
 }
 
